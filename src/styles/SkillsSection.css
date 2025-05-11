@@ -1,0 +1,98 @@
+.skills-section {
+  padding: 60px 40px;
+  text-align: center;
+  background-color: #000; /* Or match the app's primary dark background */
+  position: relative; /* For any potential pseudo-elements or positioning */
+  z-index: 1; /* Ensure it's above the main background glow if that's global */
+  min-height: 80vh; /* Give it some substantial height */
+}
+
+.skills-title {
+  font-size: 2.8rem;
+  color: #e0e0e0;
+  margin-bottom: 50px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 30px; /* Space between cards */
+  max-width: 1200px;
+  margin: 0 auto; /* Center the grid */
+}
+
+.skill-card {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 220px; /* Or adjust as desired */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(128, 0, 128, 0.3); /* Purple glow on hover */
+}
+
+.skill-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.skill-card:hover .skill-card-img {
+  opacity: 0.4; /* Dim image on hover to make text more visible */
+}
+
+.skill-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Text at the bottom */
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%); /* Gradient for text readability */
+  opacity: 1; /* Make overlay always visible or visible on hover */
+  transition: opacity 0.3s ease;
+}
+
+/* .skill-card:hover .skill-card-overlay {
+  opacity: 1;
+} */
+
+.skill-card-name {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* If you add description: */
+/*
+.skill-card-description {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.1s;
+}
+
+.skill-card:hover .skill-card-description {
+  opacity: 1;
+}
+*/

@@ -1,0 +1,59 @@
+html {
+  scroll-behavior: smooth;
+}
+
+a{
+text-decoration: none;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000; /* The main dark background */
+  color: #fff;
+  overflow-x: hidden; /* Prevent horizontal scroll if the glowing border is wide */
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* For positioning the glowing border if done with CSS */
+  /* If using a background image for the glowing border:
+  background-image: url('/path-to-your-glowing-border-image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  */
+}
+
+/* Placeholder for the glowing border - this is a very simplified version.
+   A real glowing border like in the image is complex and might need an SVG or a carefully crafted image. */
+.app-container::before,
+.app-container::after {
+  content: '';
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  width: 60px; /* Adjust width of the border */
+  background: linear-gradient(to bottom, rgba(128, 0, 128, 0), rgba(128, 0, 128, 0.7), rgba(128, 0, 128, 0)); /* Purple glow */
+  filter: blur(30px); /* Blur effect for the glow */
+  z-index: -1; /* Behind content */
+  opacity: 0.6;
+}
+
+.app-container::before {
+  left: 2%;
+  transform: skewX(-15deg); /* Approximate the angle */
+}
+
+.app-container::after {
+  right: 2%;
+  transform: skewX(15deg); /* Approximate the angle */
+}
+
+/* You'd need more elements or a more complex SVG for the top/bottom parts of the glow */

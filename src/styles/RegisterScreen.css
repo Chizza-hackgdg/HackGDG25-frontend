@@ -1,0 +1,150 @@
+.register-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Takes full viewport height */
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #000; /* Assuming the global styles handle the purple glow borders */
+  position: relative;
+  overflow: hidden; /* Prevents background text from causing scrollbars if too large */
+  color: #fff;
+}
+
+/* Decorative Background Texts - adjust positions, sizes, and opacity as needed */
+.bg-text {
+  position: absolute;
+  font-size: 4rem; /* Adjust as needed */
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.05); /* Very faint */
+  text-transform: uppercase;
+  z-index: 0;
+  user-select: none; /* Make text unselectable */
+}
+
+.text-invest { top: 10%; left: 5%; transform: rotate(-15deg); font-size: 3.5vw; }
+.text-levelup { top: 40%; left: 15%; transform: rotate(-20deg); font-size: 4.5vw; }
+.text-startgrowing { top: 15%; right: 8%; transform: rotate(10deg); font-size: 3vw; }
+.text-beginjourney { top: 55%; right: 5%; transform: rotate(15deg); font-size: 4vw; }
+/* "UNLOCK YOUR POTENTIAL" is handled differently below the form */
+
+
+.register-form-container {
+  background-color: rgba(10, 10, 10, 0.6); /* Slightly transparent dark background */
+  padding: 40px 50px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 480px; /* Adjust as needed */
+  text-align: center;
+  z-index: 1;
+  border: 1px solid rgba(128, 0, 128, 0.2); /* Subtle purple border */
+  box-shadow: 0 0 30px rgba(128, 0, 128, 0.2);
+}
+
+.register-form-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.login-link-text {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.highlight-link {
+  color: #DA70D6; /* Orchid - a pinkish purple */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.highlight-link:hover {
+  text-decoration: underline;
+}
+
+.register-form .input-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 1.1rem;
+}
+
+.register-form input[type="email"],
+.register-form input[type="text"],
+.register-form input[type="password"] {
+  width: 100%;
+  padding: 12px 15px 12px 50px; /* Padding to make space for icon */
+  background-color: rgba(30, 30, 30, 0.8);
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.register-form input::placeholder {
+  color: #888;
+}
+
+.register-form input:focus {
+  outline: none;
+  border-color: #8A2BE2; /* Purple border on focus */
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+}
+
+.eye-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.btn-register {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to right, #C837C8, #8A2BE2); /* Pink/Purple gradient */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 10px;
+}
+
+.btn-register:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+}
+
+.unlock-potential-text {
+  margin-top: 30px;
+  color: #ccc;
+  font-weight: bold;
+}
+
+.unlock-potential-text p:first-child {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+.unlock-potential-text p:last-child {
+  font-size: 1.5rem; /* "UNLOCK YOUR POTENTIAL" larger */
+  color: #DA70D6; /* Match highlight link color */
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}

@@ -1,0 +1,137 @@
+/* src/components/SubscriptionsSection.css */
+.subscriptions-section {
+  padding: 70px 40px;
+  background-color: #000; /* Match the dark theme */
+  text-align: center;
+  position: relative;
+  min-height: 90vh; /* Give it some height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.subscriptions-header {
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subscriptions-title {
+  font-size: 2.8rem; /* Adjust as needed */
+  color: #e0e0e0;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-left: 15px; /* Space between ICHU logo (if it were here) and SUBSCRIPTIONS */
+}
+
+
+.subscription-cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* Makes cards same height if content differs slightly */
+  gap: 30px; /* Space between cards */
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+  max-width: 1200px;
+  width: 100%;
+}
+
+.subscription-card {
+  background-color: #101010; /* Slightly lighter than pitch black for card background */
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 30px 25px;
+  width: 100%;
+  max-width: 320px; /* Max width for each card */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes button to the bottom */
+  box-shadow: 0 0 20px rgba(var(--border-color), 0.2), 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subscription-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 0 35px var(--border-color), 0 8px 25px rgba(0,0,0,0.4);
+}
+
+
+.plan-name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--border-color); /* Match text color to border */
+  margin-bottom: 10px;
+}
+
+.plan-price {
+  font-size: 1.3rem;
+  color: #f0f0f0;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  text-align: left;
+  color: #c0c0c0;
+  font-size: 0.95rem;
+}
+
+.plan-features li {
+  margin-bottom: 12px;
+  padding-left: 10px; /* Indent features slightly */
+}
+
+.btn-continue {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  color: #fff;
+  width: 100%;
+  margin-top: auto; /* Pushes button to bottom if card content height varies */
+}
+
+/* Specific button styles if needed, or use plan.borderColor for background */
+.btn-standard { background-color: #DA70D6; }
+.btn-standard:hover { background-color: #c95fca; transform: translateY(-2px); }
+
+.btn-elite { background-color: #FF4500; }
+.btn-elite:hover { background-color: #e63e00; transform: translateY(-2px); }
+
+.btn-premium { background-color: #FFD700; color: #333; } /* Gold button with dark text */
+.btn-premium:hover { background-color: #e6c200; transform: translateY(-2px); }
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .subscription-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .subscription-card {
+    max-width: 450px; /* Allow cards to be wider in single column */
+    margin-bottom: 30px; /* Add space when stacked */
+  }
+  .subscription-card:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .subscriptions-title {
+    font-size: 2.2rem;
+  }
+  .plan-name {
+    font-size: 1.4rem;
+  }
+  .plan-price {
+    font-size: 1.1rem;
+  }
+}

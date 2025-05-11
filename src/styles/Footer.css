@@ -1,0 +1,118 @@
+/* src/components/Footer.css */
+.app-footer {
+  background-color: #0a0a0a; /* Very dark background, slightly different from pitch black */
+  color: #a0a0a0; /* Light grey text */
+  padding: 50px 40px 20px; /* Top/bottom padding, left/right padding */
+  border-top: 1px solid rgba(128, 0, 128, 0.2); /* Subtle purple top border */
+  font-family: 'Poppins', sans-serif;
+  margin-top: auto; /* Pushes footer to bottom if content is short on a page */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+  gap: 30px; /* Space between sections */
+  max-width: 1200px;
+  margin: 0 auto 30px auto; /* Center content and add bottom margin before copyright */
+}
+
+.footer-logo-section,
+.footer-links-section,
+.footer-social-section {
+  flex: 1; /* Distribute space among sections */
+  min-width: 220px; /* Minimum width before wrapping */
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #DA70D6; /* Orchid - brand color */
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+}
+
+.footer-links-section h4,
+.footer-social-section h4 {
+  font-size: 1.2rem;
+  color: #e0e0e0; /* Brighter white for headings */
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-links-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links-section ul li a {
+  color: #a0a0a0;
+  text-decoration: none;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-links-section ul li a:hover {
+  color: #DA70D6; /* Highlight color on hover */
+  padding-left: 5px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px; /* Space between icons */
+}
+
+.social-icons a {
+  color: #a0a0a0;
+  font-size: 1.5rem; /* Size of social icons */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #DA70D6; /* Highlight color on hover */
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #222; /* Separator line for copyright */
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Responsive adjustments for Footer */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center; /* Center sections when stacked */
+    text-align: center;
+  }
+
+  .footer-logo-section,
+  .footer-links-section,
+  .footer-social-section {
+    min-width: 100%; /* Full width when stacked */
+    align-items: center;
+  }
+
+  .footer-links-section ul {
+    display: inline-block; /* Center the list items */
+    text-align: left; /* Keep text in list items left-aligned */
+  }
+  
+  .social-icons {
+    justify-content: center; /* Center social icons */
+  }
+}
